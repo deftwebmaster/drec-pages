@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Recovery — Sobriety Without Surrender</title>
+    <meta name="description" content="A systems-based approach to sobriety for people who don't fit the standard models. No confession. No redemption arc. No belief required.">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://darkrecovery.com/">
+    <meta property="og:title" content="Dark Recovery — Sobriety Without Surrender">
+    <meta property="og:description" content="A systems-based approach to sobriety for people who don't fit the standard models. No confession. No redemption arc. No belief required.">
+    <meta property="og:image" content="https://darkrecovery.com/cover.png">
+    <meta property="og:image:width" content="1600">
+    <meta property="og:image:height" content="2560">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dark Recovery — Sobriety Without Surrender">
+    <meta name="twitter:description" content="A systems-based approach to sobriety for people who don't fit the standard models.">
+    <meta name="twitter:image" content="https://darkrecovery.com/cover.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600&family=IBM+Plex+Serif:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-primary: #121212;
+            --bg-secondary: #1a1a1a;
+            --bg-tertiary: #222222;
+            --text-primary: #f0f0f0;
+            --text-secondary: #a0a0a0;
+            --text-muted: #666666;
+            --accent: #3a5a5a;
+            --accent-light: #4a7a7a;
+            --border: #2a2a2a;
+            --font-sans: 'IBM Plex Sans', -apple-system, sans-serif;
+            --font-serif: 'IBM Plex Serif', Georgia, serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            font-size: 18px;
+            line-height: 1.7;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        @media (max-width: 600px) {
+            section {
+                padding: 60px 0;
+            }
+            body {
+                font-size: 16px;
+            }
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-top: 120px;
+            padding-bottom: 120px;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 10vw, 5rem);
+            font-weight: 600;
+            letter-spacing: -0.03em;
+            line-height: 1.05;
+            margin-bottom: 16px;
+        }
+
+        .hero .tagline {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: clamp(1.25rem, 3vw, 1.5rem);
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+
+        .hero .positioning {
+            font-size: 1rem;
+            color: var(--text-muted);
+            max-width: 480px;
+        }
+
+        /* Section Headers */
+        h2 {
+            font-size: 1.75rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            margin-bottom: 24px;
+            color: var(--text-primary);
+        }
+
+        h3 {
+            font-size: 1.125rem;
+            font-weight: 500;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: var(--text-secondary);
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Problem Section */
+        .problem {
+            border-top: 1px solid var(--border);
+        }
+
+        .problem h2 {
+            font-family: var(--font-serif);
+            font-weight: 400;
+            font-size: 1.5rem;
+            line-height: 1.5;
+            color: var(--text-secondary);
+        }
+
+        /* What This Is */
+        .what-this-is {
+            background-color: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .highlight-list {
+            list-style: none;
+            margin-top: 32px;
+        }
+
+        .highlight-list li {
+            padding: 12px 0;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .highlight-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Manifesto Section */
+        .manifesto-section {
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+
+        .manifesto-section h2 {
+            margin-bottom: 8px;
+        }
+
+        .manifesto-intro {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 48px;
+        }
+
+        .manifesto-content {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 48px;
+            max-height: 600px;
+            overflow-y: auto;
+        }
+
+        @media (max-width: 600px) {
+            .manifesto-content {
+                padding: 24px;
+                max-height: 500px;
+            }
+        }
+
+        .manifesto-content h3 {
+            font-size: 1.25rem;
+            margin-top: 40px;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+
+        .manifesto-content h3:first-child {
+            margin-top: 0;
+        }
+
+        .manifesto-content p {
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .manifesto-content blockquote {
+            font-family: var(--font-serif);
+            font-style: italic;
+            font-size: 1rem;
+            color: var(--text-primary);
+            padding: 20px 24px;
+            margin: 24px 0;
+            border-left: 2px solid var(--accent);
+            background-color: var(--bg-tertiary);
+        }
+
+        .manifesto-content .section-break {
+            text-align: center;
+            color: var(--text-muted);
+            margin: 48px 0;
+            font-size: 1.5rem;
+            letter-spacing: 0.5em;
+        }
+
+        /* Guide Section */
+        .guide-section {
+            background-color: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 48px;
+            align-items: start;
+        }
+
+        @media (max-width: 600px) {
+            .guide-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+        }
+
+        .guide-cover {
+            width: 100%;
+            max-width: 200px;
+            border-radius: 2px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        }
+
+        @media (max-width: 600px) {
+            .guide-cover {
+                max-width: 160px;
+                margin: 0 auto;
+            }
+        }
+
+        .guide-details h2 {
+            margin-bottom: 16px;
+        }
+
+        .guide-toc {
+            list-style: none;
+            margin: 24px 0;
+            font-size: 0.9rem;
+        }
+
+        .guide-toc li {
+            padding: 6px 0;
+            color: var(--text-muted);
+            padding-left: 16px;
+            position: relative;
+        }
+
+        .guide-toc li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .guide-meta {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 24px;
+            margin-bottom: 24px;
+        }
+
+        .price {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+        }
+
+        .buy-button {
+            display: inline-block;
+            background-color: var(--text-primary);
+            color: var(--bg-primary);
+            padding: 16px 40px;
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: 2px;
+            transition: all 0.2s ease;
+        }
+
+        .buy-button:hover {
+            background-color: var(--accent-light);
+            color: var(--text-primary);
+        }
+
+        /* Who This Is For */
+        .who-section h2 {
+            margin-bottom: 40px;
+        }
+
+        .trait {
+            margin-bottom: 32px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .trait:last-of-type {
+            border-bottom: none;
+            margin-bottom: 40px;
+        }
+
+        .trait h3 {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .trait p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+
+        .closing-line {
+            font-family: var(--font-serif);
+            font-style: italic;
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-content {
+            text-align: center;
+        }
+
+        .footer-statement {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .footer-contact {
+            font-size: 0.85rem;
+        }
+
+        .footer-contact a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border);
+            transition: border-color 0.2s ease;
+        }
+
+        .footer-contact a:hover {
+            border-color: var(--text-secondary);
+        }
+
+        /* Scrollbar */
+        .manifesto-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .manifesto-content::-webkit-scrollbar-track {
+            background: var(--bg-tertiary);
+        }
+
+        .manifesto-content::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 4px;
+        }
+
+        .manifesto-content::-webkit-scrollbar-thumb:hover {
+            background: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1>Dark Recovery</h1>
+            <p class="tagline">Sobriety Without Surrender</p>
+            <p class="positioning">A systems-based approach for people who don't fit the standard models.</p>
+        </div>
+    </section>
+
+    <!-- Problem -->
+    <section class="problem">
+        <div class="container">
+            <h2>Recovery models assume you'll surrender. What if that's not how you're built?</h2>
+            <p>Most recovery frameworks require submission—to a higher power, to a group, to a program. For some people, that works. For others, surrender feels like self-erasure.</p>
+            <p>Dark Recovery is for the second group.</p>
+        </div>
+    </section>
+
+    <!-- What This Is -->
+    <section class="what-this-is">
+        <div class="container">
+            <h2>A Different Architecture</h2>
+            <p>Dark Recovery treats sobriety as an engineering problem, not a moral one.</p>
+            <p>It works by dismantling the identity alcohol served and rebuilding the systems that made it necessary.</p>
+            <ul class="highlight-list">
+                <li>No confession</li>
+                <li>No redemption arc</li>
+                <li>No belief required</li>
+            </ul>
+            <p style="margin-top: 32px;">Just structure, honesty, and time.</p>
+        </div>
+    </section>
+
+    <!-- Manifesto -->
+    <section class="manifesto-section">
+        <div class="container">
+            <h2>Read the Manifesto</h2>
+            <p class="manifesto-intro">The full philosophy—what Dark Recovery is, who it's for, what it refuses to do, and how it fails. Free. No email required.</p>
+            
+            <div class="manifesto-content">
+                <h3>What Dark Recovery Is</h3>
+                <p>Dark Recovery is a systems-based approach to sobriety that treats drinking as an identity-supported behavior, not a moral failure, spiritual deficit, or personal weakness.</p>
+                <p>It is not a program, not a belief system, and not a replacement for existing recovery models. It is a documented experiment—one viable architecture among many—for people whose thinking style did not interface well with the standard options.</p>
+                <p>If something else works for you, keep it.</p>
+                <p>Dark Recovery is not an upgrade path. It is a compatibility alternative.</p>
+                <p>This framework emerged from lived experience—from someone who needed a different architecture to make sobriety stick. It is offered not as prescription, but as documentation.</p>
+
+                <h3>What "Dark" Means (Precisely)</h3>
+                <p>"Dark" does not mean edgy, pessimistic, antisocial, or nihilistic.</p>
+                <p>It means this: Dark Recovery works directly with the parts of yourself that benefited from drinking—without redeeming them, suppressing them, or pretending they didn't exist.</p>
+                <p>Alcohol is not framed as an external invader. It is treated as a solution that worked—until it didn't.</p>
+                <p>The "dark" work is unsentimental inspection: No confession. No absolution. No identity theater. No redemption arc required.</p>
+                <p>This is not shadow embrace. It is shadow audit.</p>
+
+                <h3>The Core Thesis</h3>
+                <p>Sobriety fails most often when it is framed as moral reform ("be better"), spiritual rebirth ("surrender"), or pure restraint ("just don't drink").</p>
+                <p>Dark Recovery operates on a different assumption:</p>
+                <blockquote>Drinking persists because it is embedded in identity and reinforced by systems.</blockquote>
+                <p>Remove alcohol without addressing those layers, and the system searches for replacement pressure—or collapses.</p>
+                <p>Therefore:</p>
+                <blockquote>Sobriety is not abstinence. Sobriety is identity decommissioning plus systems replacement.</blockquote>
+
+                <h3>Identity Decommissioning (Not Suppression)</h3>
+                <p>Alcohol was not just a substance. It was a role amplifier.</p>
+                <p>For many people, it supported: pride, endurance, edge, chaos tolerance, social dominance, transgression, self-erasure dressed as freedom.</p>
+                <p>Dark Recovery does not demand the abandonment of identity. It demands the removal of alcohol as a false carrier of values.</p>
+                <p>You don't lose who you are. You strip alcohol out of the equation and keep what's actually yours.</p>
+                <p>The goal is not to fight the old identity. The goal is to render it obsolete.</p>
+                <p>Suppression creates war. Obsolescence creates quiet.</p>
+
+                <h3>Systems Replacement (Not Willpower)</h3>
+                <p>Once identity is decommissioned, systems must replace what alcohol was doing functionally.</p>
+                <p>Dark Recovery treats life like an operating environment: inputs, defaults, constraints, failure modes, degraded operation.</p>
+                <p>This approach deliberately avoids motivation, inspiration, and "wanting it badly enough."</p>
+                <p>Instead, it asks: What pressures existed? What friction was missing? What defaults allowed drift? What roles did alcohol silently perform?</p>
+                <p>Systems are redesigned so that alcohol is no longer required for the system to function.</p>
+                <p>Not forbidden. Not resisted. Not dramatized. Simply unnecessary.</p>
+
+                <h3>Where the Feeling Work Lives</h3>
+                <p>Systems solve behavioral reliability. They do not metabolize what alcohol was anesthetizing.</p>
+                <p>Dark Recovery breaks if it pretends architecture alone is enough.</p>
+                <p>Dark Recovery does not outsource feeling work to spirituality, group catharsis, or narrative healing—but it also doesn't ignore it. It relocates it.</p>
+                <p>The emotional work happens in forced contact, not expression. Specifically: when alcohol is removed and no replacement is allowed; when systems hold you steady long enough that avoided states surface; when boredom, grief, anger, shame, or restlessness appear without an escape hatch.</p>
+                <p>Dark Recovery assumes this moment is inevitable—and designs for it.</p>
+                <blockquote>Systems don't do the feeling work. Systems remove the exits so the feeling work can no longer be skipped.</blockquote>
+                <p>No journaling mandate. No group processing. No "talk about your feelings." Just sustained exposure under stable conditions.</p>
+                <p>If someone needs therapy alongside this, that's compatible—but not required for the system to function.</p>
+
+                <h3>Not Becoming a "Better Person"</h3>
+                <p>This is a foundational refusal: Dark Recovery is not about becoming a better person.</p>
+                <p>There is no moral ladder here. No purity test. No improved self-image promised.</p>
+                <p>The aim is narrower and more practical:</p>
+                <blockquote>To become a person who no longer needs alcohol to operate.</blockquote>
+                <p>"Better" is irrelevant. Functional matters.</p>
+
+                <h3>No Superiority, No Evangelism</h3>
+                <p>Dark Recovery does not claim greater courage, deeper honesty, higher intelligence, or more discipline.</p>
+                <p>It claims difference, not elevation.</p>
+                <p>Other recovery models optimize for different assumptions, address different failure modes, and serve different psychological architectures.</p>
+                <p>Dark Recovery exists because model mismatch is real.</p>
+                <p>Failure to fit is not failure of character.</p>
+
+                <h3>Loneliness Without Isolation</h3>
+                <p>Dark Recovery does not promote lone-wolf sobriety.</p>
+                <p>It rejects confessional dependency, not connection.</p>
+                <p>Instead of sponsors and identity-based community, it emphasizes: externalized constraints, witnesses instead of authorities, shared activity instead of shared identity, structure instead of confession, visibility instead of emotional performance.</p>
+                <p>Key principle:</p>
+                <blockquote>Isolation doesn't cause relapse. Unobserved drift does.</blockquote>
+                <p>The system is designed to reduce drift without requiring belief, submission, or social theater.</p>
+
+                <h3>The Failure Modes</h3>
+                <p>Every system has characteristic ways it fails. Dark Recovery is no exception. Naming these explicitly is essential to the framework's integrity.</p>
+                <p><strong>Primary Failure Mode: Sterile Mastery</strong></p>
+                <p>Dark Recovery fails when the system becomes flawless, the life becomes orderly, the edges disappear—and the person never actually meets the discomfort alcohol was buffering.</p>
+                <p>Symptoms: excessive optimization, endless redesigns, pride in resilience, emotional flatness mislabeled as "stability," quiet resentment toward "messy" people or models.</p>
+                <p>The system works so well that nothing leaks—and therefore nothing gets processed.</p>
+                <p>This is not relapse-prone in the short term. It's collapse-prone later.</p>
+                <p><strong>Secondary Failure Mode: Control Substitution</strong></p>
+                <p>Alcohol is removed, but control, rigidity, self-surveillance, and performance slide in as replacements.</p>
+                <p>The substance is gone. The compulsion isn't.</p>
+                <p>Dark Recovery must explicitly warn:</p>
+                <blockquote>If the system makes you feel superior, invulnerable, or untouchable—it's already failing.</blockquote>
+                <p><strong>The Countermeasure: Unoptimized Space</strong></p>
+                <p>Dark Recovery requires deliberate friction, unoptimized space, and periods where nothing is "fixed." Not chaos. Not relapse rehearsal. Just unmanaged experience.</p>
+                <p>A core principle:</p>
+                <blockquote>If your life becomes too smooth, something is being avoided.</blockquote>
+                <p>That sentence alone keeps the philosophy honest.</p>
+
+                <h3>Who This Is For</h3>
+                <p>Dark Recovery fits people who have three specific traits:</p>
+                <p><strong>1. High Agency, Low Receptivity to Authority</strong><br>Strong internal locus of control. Allergic to submission-based models. Experience "surrender" as self-erasure, not relief. These people don't resist rules. They resist being ruled.</p>
+                <p><strong>2. Identity-Forward Drinkers</strong><br>Drinking was tied to self-image. Pride, edge, intensity, or transgression were involved. Alcohol was a symbol, not just a sedative. If alcohol was only numbing pain, other models may fit better. If alcohol was meaningful, Dark Recovery has leverage.</p>
+                <p><strong>3. Cognitive Over-Feelers (By Default, Not Denial)</strong><br>Pattern thinkers. Builders. Systematizers. People who stabilize through structure first, emotion second. Important distinction: This is not emotional repression. It's sequencing. These people feel after safety is restored—not before.</p>
+
+                <h3>Who This Is Not For</h3>
+                <p>Dark Recovery is a poor fit for people seeking belonging as the primary need, those who need external moral scaffolding to stabilize, people in acute crisis who require containment first, or anyone who wants certainty, identity, or absolution handed to them.</p>
+                <p>This is not a refuge. It's a workbench.</p>
+
+                <h3>What Dark Recovery Refuses to Do</h3>
+                <p>Dark Recovery does not tell anyone what is right, argue against other recovery paths, require belief, surrender, or confession, promise transformation, enlightenment, or redemption, or demand identity replacement with a new label.</p>
+                <p>It offers one thing only:</p>
+                <blockquote>A way to dismantle a working-but-destructive system and replace it without mythologizing the process.</blockquote>
+
+                <h3>The Ethical Boundary</h3>
+                <p>Dark Recovery explicitly acknowledges: Some people need AA. Some people need God. Some people need medication. Some people need clinical treatment. Some people need community-first recovery.</p>
+                <p>Period.</p>
+                <p>Dark Recovery does not compete with those paths. It exists alongside them.</p>
+
+                <h3>Final Compression</h3>
+                <p>If this had to be reduced to its irreducible form:</p>
+                <blockquote>Dark Recovery treats sobriety as an engineering problem, not a moral one—by dismantling the identity alcohol served and rebuilding the systems that made it necessary.</blockquote>
+                <p>Dark Recovery succeeds by using systems to remove escape routes, fails when systems become escape routes, and fits people who stabilize through agency and structure before emotion—not the other way around.</p>
+                <p>If someone reads this and says, "This isn't for me, but I understand why it worked for you," then it's doing exactly what it's meant to do.</p>
+
+                <div class="section-break">···</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guide -->
+    <section class="guide-section">
+        <div class="container">
+            <div class="guide-grid">
+                <img src="cover.png" alt="Dark Recovery: The Operational Guide" class="guide-cover">
+                <div class="guide-details">
+                    <h2>The Operational Guide</h2>
+                    <p>If the manifesto resonates, the guide is the map.</p>
+                    <p>Nine chapters covering:</p>
+                    <ul class="guide-toc">
+                        <li>First principles and the operating loop</li>
+                        <li>Early phase containment (Days 1–30)</li>
+                        <li>Building phase load bearing (Days 30–180)</li>
+                        <li>Mature phase elastic stability (Day 180+)</li>
+                        <li>The Sterile Mastery diagnostic</li>
+                        <li>Unoptimized space protocols</li>
+                        <li>Failure mode detection and course correction</li>
+                        <li>When to abandon this for something else</li>
+                    </ul>
+                    <p class="guide-meta">~10,000 words. Direct. No padding.</p>
+                    <div class="price">$15</div>
+                    <a href="#" class="buy-button">Buy the Guide</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who This Is For -->
+    <section class="who-section">
+        <div class="container">
+            <h2>This Might Be For You If:</h2>
+            
+            <div class="trait">
+                <h3>High agency, low receptivity to authority.</h3>
+                <p>You don't resist rules—you resist being ruled.</p>
+            </div>
+            
+            <div class="trait">
+                <h3>Identity-forward drinker.</h3>
+                <p>Alcohol wasn't just numbing. It meant something.</p>
+            </div>
+            
+            <div class="trait">
+                <h3>Cognitive over-feeler.</h3>
+                <p>You stabilize through structure first, emotion second.</p>
+            </div>
+            
+            <p class="closing-line">If that's not you, no problem. Other models exist for good reasons.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-statement">Built from lived experience. Offered as documentation, not prescription.</p>
+                <p class="footer-contact"><a href="/cdn-cgi/l/email-protection#761b170202361217041d041315190013040f5815191b"><span class="__cf_email__" data-cfemail="6904081d1d
