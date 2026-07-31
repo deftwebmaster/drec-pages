@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#101214"/>
+  <rect x="60" y="60" width="1080" height="510" fill="#171a1d" stroke="#4b535c" stroke-width="2"/>
+  <text x="96" y="150" fill="#d3a654" font-family="ui-monospace, monospace" font-size="28">THE OPERATIONAL RECOVERY MANUAL</text>
+  <text x="96" y="250" fill="#ece9e1" font-family="system-ui, sans-serif" font-size="72" font-weight="700">Dark Recovery</text>
+  <text x="96" y="335" fill="#b1c7d2" font-family="system-ui, sans-serif" font-size="38">Stabilize → Restrict → Replace → Reinforce → Repair</text>
+  <text x="96" y="450" fill="#aaa9a3" font-family="system-ui, sans-serif" font-size="34">Assumes failure. Still works.</text>
+</svg>
